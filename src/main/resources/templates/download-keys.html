@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Keys</title>
+    <style>
+        body {
+            background-color: black; /* Background set to black */
+            color: #3498db; /* Text color set to blue */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db; /* Blue background */
+            color: black; /* Black text */
+            border: 2px solid #3498db; /* Blue border */
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 10px; /* Add spacing between buttons */
+        }
+
+        button:hover {
+            background-color: black; /* Background turns black on hover */
+            color: #3498db; /* Text turns blue on hover */
+            border: 2px solid #3498db; /* Blue border on hover */
+        }
+    </style>
+</head>
+<body>
+<h1>Your Keys</h1>
+<form action="/download-public-key" method="get">
+    <button type="submit">Download Public Key</button>
+</form>
+<form action="/download-private-key" method="get">
+    <button type="submit">Download Private Key</button>
+</form>
+</body>
+</html>

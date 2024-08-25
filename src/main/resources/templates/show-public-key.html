@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Public Keys</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        body {
+            background-color: black; /* Background set to black */
+            color: #3498db; /* Text color set to blue */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            background-color: #f8f9fa;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #3498db;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db; /* Blue background for headers */
+            color: black; /* Black text for headers */
+        }
+
+        td {
+            color: black; /* Black text for table data */
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #3498db;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #3498db; /* Blue background */
+            color: black; /* Black text */
+            border: 2px solid #3498db; /* Blue border */
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: black; /* Background turns black on hover */
+            color: #3498db; /* Text turns blue on hover */
+            border: 2px solid #3498db; /* Blue border on hover */
+        }
+
+        a {
+            color: #3498db; /* Blue text for links */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+<h1>Public Keys</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Unique ID</th>
+        <th>Email</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Iterate over the list of users and display each one -->
+    <tr th:each="user : ${users}">
+        <td th:text="${user.uniqueId}"></td>
+        <td th:text="${user.email}"></td>
+        <td th:text="${user.name}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Encrypt Message</h2>
+<form action="/encrypt-message" method="post">
+    <label for="uniqueId">Enter Unique ID:</label>
+    <input type="text" id="uniqueId" name="uniqueId" required>
+    <br><br>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" rows="5" cols="40" required></textarea>
+    <br><br>
+    <input type="submit" value="Encrypt Message">
+</form>
+
+<a href="/">Back to Home</a>
+</body>
+</html>
+

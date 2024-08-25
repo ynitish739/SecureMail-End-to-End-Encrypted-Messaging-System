@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decrypted Message</title>
+    <style>
+        body {
+            background-color: black; /* Black background */
+            color: #3498db; /* Blue text color */
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3498db; /* Blue color for the heading */
+        }
+
+        .message-box {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #3498db; /* Blue border */
+            background-color: white; /* White background */
+            color: black; /* Black text */
+            margin-top: 10px;
+            white-space: pre-wrap; /* Preserve line breaks */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        a {
+            color: #3498db; /* Blue text for links */
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Decrypted Message</h1>
+
+    <div class="message-box">
+        <p th:text="${decryptedMessage}"></p>
+    </div>
+
+    <a href="/">Back to Home</a>
+</div>
+</body>
+</html>

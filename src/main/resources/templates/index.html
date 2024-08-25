@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted Messaging System</title>
+    <style>
+        body {
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+        }
+        button:hover {
+    background-color: white;
+    color: #3498db; /* Blue text */
+    border: 2px solid black;
+}
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <button onclick="location.href='/generate-key-pair'">Generate Key Pair</button>
+    <button onclick="location.href='/show-public-key'">Encrypt Message</button>
+    <button onclick="location.href='/decrypt-message'">Decrypt Message</button>
+</div>
+
+<script>
+    // Function to display a temporary alert pop-up if a message is present in the URL
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const message = urlParams.get('message');
+
+        if (message) {
+            alert(decodeURIComponent(message));
+        }
+    };
+</script>
+</body>
+</html>
